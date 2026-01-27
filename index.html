@@ -77,6 +77,10 @@
         flex-wrap: wrap;
       }
 
+      .cta-group.centered {
+        justify-content: center;
+      }
+
       .button {
         padding: 14px 28px;
         border-radius: 6px;
@@ -264,7 +268,7 @@
     <section id="ecosystem" class="section">
       <div class="container">
         <div class="grid-two">
-          <div class="card">
+          <section class="card">
             <h3>SKILVYN Talent Engine</h3>
             <p class="tagline">From confusion to careers.</p>
             <ul class="list">
@@ -273,9 +277,9 @@
               <li>Student communities &amp; chapters</li>
               <li>Internships, projects &amp; hiring pipelines</li>
             </ul>
-            <a class="pillars-cta" href="#talent">Explore Talent Engine</a>
-          </div>
-          <div class="card">
+            <a class="pillars-cta" href="#talent-engine">Explore Talent Engine</a>
+          </section>
+          <section class="card">
             <h3>SKILVYN Execution Lab</h3>
             <p class="tagline">No decks. Just delivery.</p>
             <ul class="list">
@@ -284,8 +288,8 @@
               <li>Startup &amp; enterprise consulting</li>
               <li>Growth, branding &amp; SEO</li>
             </ul>
-            <a class="pillars-cta" href="#execution">Explore Execution Lab</a>
-          </div>
+            <a class="pillars-cta" href="#execution-lab">Explore Execution Lab</a>
+          </section>
         </div>
       </div>
     </section>
@@ -343,7 +347,7 @@
       <div class="container">
         <h2>Services Snapshot</h2>
         <div class="services">
-          <div>
+          <section id="execution-lab">
             <h3>Execution Lab Services</h3>
             <ul class="list">
               <li>Cybersecurity</li>
@@ -352,8 +356,8 @@
               <li>DevOps &amp; Cloud</li>
               <li>Growth &amp; Branding</li>
             </ul>
-          </div>
-          <div>
+          </section>
+          <section id="talent-engine">
             <h3>Talent Engine Services</h3>
             <ul class="list">
               <li>Career guidance</li>
@@ -361,7 +365,7 @@
               <li>Student chapters</li>
               <li>Internships &amp; jobs</li>
             </ul>
-          </div>
+          </section>
         </div>
       </div>
     </section>
@@ -382,7 +386,7 @@
       </div>
     </section>
 
-    <section id="talent" class="section">
+    <section class="section">
       <div class="container">
         <h2>Who SKILVYN Is For</h2>
         <div class="grid-two">
@@ -394,7 +398,7 @@
               <li>Care about jobs, not certificates</li>
             </ul>
           </div>
-          <div class="card" id="execution">
+          <div class="card">
             <h3>For Companies</h3>
             <ul class="list">
               <li>Need execution, not advice</li>
@@ -409,7 +413,7 @@
     <section class="section final-cta" id="contact">
       <div class="container">
         <h2>This is not education. This is infrastructure.</h2>
-        <div class="cta-group" style="justify-content: center">
+        <div class="cta-group centered">
           <a class="button primary" href="mailto:hello@skilvyn.com">Start Your Career with SKILVYN</a>
           <a class="button secondary" href="mailto:hello@skilvyn.com">Build with SKILVYN</a>
         </div>
@@ -417,7 +421,15 @@
     </section>
 
     <footer>
-      <div class="container">© 2026 SKILVYN. All rights reserved.</div>
+      <div class="container">© <span id="year"></span> SKILVYN. All rights reserved.</div>
     </footer>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const year = document.getElementById("year");
+        if (year) {
+          year.textContent = new Date().getFullYear();
+        }
+      });
+    </script>
   </body>
 </html>
